@@ -90,10 +90,8 @@ public class Direccion {
      */
     @Override
     public String toString() {
-        return "Direccion{" +
-                "calle='" + calle + '\'' +
-                ", numero=" + numero +
-                ", comuna='" + comuna + '\'' +
-                '}';
+        return  "calle:'" + calle + '\'' +
+                ", numero:" + numero +
+                ", comuna:'" + comuna + '\'';
     }
 }

@@ -54,10 +54,8 @@ public class Cliente extends Persona{
     @Override
     public String toString() {
         return "Cliente{" +
-                "nombre='" + nombre + '\'' +
-                ", rut='" + rut + '\'' +
-                ", direccion=" + direccion +
-                ", Tour reservado=" + tourReservado +
+                super.toString() +
+                ", tourReservado:'" + tourReservado + '\'' +
                 '}';
     }
 }

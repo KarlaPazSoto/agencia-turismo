@@ -52,8 +52,9 @@ public class GuiaTuristico extends Persona{
      */
     @Override
     public String toString() {
-        return "GuiaTuristico{" +
-                "idioma='" + idioma + '\'' +
+        return "Guia Turistico{" +
+                super.toString() +
+                ", idioma:'" + idioma + '\'' +
                 '}';
     }
 }
