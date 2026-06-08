@@ -1,5 +1,8 @@
 package model;
 
+import utils.ValidacionException;
+import utils.Validador;
+
 /**
  * Representa a un cliente de la agencia
  */
@@ -22,9 +25,13 @@ public class Cliente extends Persona{
      * @param rut rut del cliente
      * @param direccion direccion del cliente
      * @param tourReservado tour reservado por el cliente
+     *
      */
-    public Cliente(String nombre, String rut, Direccion direccion, String tourReservado) {
+    public Cliente(String nombre, String rut, Direccion direccion, String tourReservado) throws ValidacionException {
         super(nombre, rut, direccion);
+
+        Validador.validarTextoVacio(tourReservado, "tour reservado");
+
         this.tourReservado = tourReservado;
     }
 
