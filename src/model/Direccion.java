@@ -1,5 +1,8 @@
 package model;
 
+import utils.ValidacionException;
+import utils.Validador;
+
 /**
  * Representa a direccion de una persona dentro del sistema
  */
@@ -14,7 +17,6 @@ public class Direccion {
      * Constructor vacio
      */
     public Direccion() {
-
     }
 
     /**
@@ -23,7 +25,12 @@ public class Direccion {
      * @param numero numero de la direccion
      * @param comuna comuna de residencia
      */
-    public Direccion(String calle, int numero, String comuna) {
+    public Direccion(String calle, int numero, String comuna) throws ValidacionException  {
+
+        Validador.validarTextoVacio(calle, "calle");
+        Validador.validarNumeroPositivo(numero, "numero");
+        Validador.validarTextoVacio(comuna, "comuna");
+
         this.calle = calle;
         this.numero  = numero;
         this.comuna = comuna;
