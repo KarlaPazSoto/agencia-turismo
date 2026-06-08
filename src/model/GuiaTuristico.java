@@ -1,5 +1,8 @@
 package model;
 
+import utils.ValidacionException;
+import utils.Validador;
+
 /**
  * Representa a un guia turistico de la agencia
  */
@@ -21,9 +24,13 @@ public class GuiaTuristico extends Persona{
      * @param rut rut del guia turistico
      * @param direccion direccion del guia turistico
      * @param idioma del guia turistico
+     * @throws ValidacionException si algun dato es invalido
      */
-    public GuiaTuristico(String nombre, String rut, Direccion direccion, String idioma){
+    public GuiaTuristico(String nombre, String rut, Direccion direccion, String idioma) throws ValidacionException {
         super(nombre, rut, direccion);
+
+        Validador.validarTextoVacio(idioma, "idioma");
+
         this.idioma = idioma;
     }
 
