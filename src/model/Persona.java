@@ -1,5 +1,8 @@
 package model;
 
+import utils.ValidacionException;
+import utils.Validador;
+
 /**
  * Representa a una persona dentro del sistema de la agencia de turismo
  */
@@ -23,8 +26,13 @@ public class Persona {
      * @param nombre nombre de la persona
      * @param rut rut de la persona
      * @param direccion direccion de la persona
+     * @throws ValidacionException si los datos son invalidos
      */
-    public Persona(String nombre, String rut, Direccion direccion) {
+    public Persona(String nombre, String rut, Direccion direccion) throws ValidacionException {
+
+        Validador.validarTextoVacio(nombre, "nombre");
+        Validador.validarRut(rut);
+
         this.nombre = nombre;
         this.rut = rut;
         this.direccion = direccion;

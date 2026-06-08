@@ -17,6 +17,7 @@ public class Direccion {
      * Constructor vacio
      */
     public Direccion() {
+
     }
 
     /**
@@ -24,6 +25,7 @@ public class Direccion {
      * @param calle nombre de la calle
      * @param numero numero de la direccion
      * @param comuna comuna de residencia
+     * @throws ValidacionException si algun dato es invalido
      */
     public Direccion(String calle, int numero, String comuna) throws ValidacionException  {
 
